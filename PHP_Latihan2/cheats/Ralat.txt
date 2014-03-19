@@ -1,0 +1,13 @@
+Ralat pada source code : 
+
+
+1. Penjualan.PHP pada baris 58
+2. Penjualan2.PHP pada baris 60 
+3. Penjualan3.PHP pada baris 60 
+4. Penjualan4.php pada baris 60
+------------------------------------------------------------
+$total=$subtotal-$diskon-$total;
+
+Seharusnya
+
+$total=$subtotal-$diskon+$ongkoskirim;
