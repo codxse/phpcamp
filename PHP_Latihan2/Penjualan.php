@@ -64,7 +64,6 @@
 
 <!-- THE CODE GOES HERE -->
 <?php
-	$barang1 = $_POST['barang'];
 	$harga = $_POST['harga'];
 	$qty = $_POST['qty'];
 	$status = $_POST['status'];
@@ -96,7 +95,7 @@
 		</tbody>
 			<tr>
 				<td>Nama Barang</td>
-				<td><?php echo $barang1; ?></td>
+				<td><?php echo $_POST['barang']; ?></td>
 			</tr>
 			<tr>
 				<td>Harga</td>
