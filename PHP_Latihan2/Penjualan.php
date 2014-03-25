@@ -42,20 +42,29 @@
 			<tr>
 				<td>Kota</td>
 				<td>
-					<select>
-						<option name="kota" value="Jakarta">Jakarta</option>
-						<option name="kota" value="Bandung">Bandung</option>
-						<option name="kota" value="Surabaya">Surabaya</option>
+					<select name="kota">
+						<option value="Jakarta" selected="selected">Jakarta</option>
+						<option value="Bandung">Bandung</option>
+						<option value="Surabaya">Surabaya</option>
 					</select>
 				</td>
 			</tr>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" value="Hitung" />
+					<input type="reset" value="Reset" />
+				</td>
+			</tr>
+		</tfoot>
 	</table>
 	</form>
 
 <!-- THE CODE GOES HERE -->
 <?php
-	$barang = $_POST['barang'];
+	$barang1 = $_POST['barang'];
 	$harga = $_POST['harga'];
 	$qty = $_POST['qty'];
 	$status = $_POST['status'];
@@ -77,7 +86,7 @@
 	$subtotal = $harga * $qty;
 	$total = $subtotal + $cost - $disc;
 ?>
-
+<br />
 	<table border="1">
 		<thead>
 			<tr>
@@ -87,7 +96,7 @@
 		</tbody>
 			<tr>
 				<td>Nama Barang</td>
-				<td><?php echo $barang; ?></td>
+				<td><?php echo $barang1; ?></td>
 			</tr>
 			<tr>
 				<td>Harga</td>
@@ -111,7 +120,7 @@
 			</tr>
 			<tr>
 				<td>Ongkos Kirim</td>
-				<td>Rp. <?php $cost . ' (' . $kota . ')'; ?></td>
+				<td>Rp. <?php echo $cost . ' (' . $kota . ')'; ?></td>
 			</tr>
 		</tbody>
 		<tfoot>
