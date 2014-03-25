@@ -41,6 +41,20 @@
 				</td>
 			</tr>
 			<tr>
+				<th scope="row">Jenis BBM</th>
+				<td>
+					<input type="checkbox" name="bensinChecked" 
+						<?php if (isset($_POST[klikTombol]) && isset($_POST['bensinChecked']))
+							echo ' checked="checked"'; ?>/>Bensin<br />
+					<input type="checkbox" name="solarChecked"
+						<?php if (isset($_POST[klikTombol]) && isset($_POST['solarChecked']))
+							echo ' checked="checked"'; ?>/>Solar<br />
+					<input type="checkbox" name="solarChecked"
+						<?php if (isset($_POST[klikTombol]) && isset($_POST['pertamaxChecked']))
+							echo ' checked="checked"'; ?>/>Pertamax
+				</td>
+			</tr>
+			<tr>
 				<td colspan="2" align="center">
 					<input type="submit" value="Tampilkan" name="klikTombol" />
 				</td>
@@ -55,13 +69,26 @@
 ?>
 	<br />
 	<table border="1">
+	<colgroup style="background-color:#ddd;" />
 	<caption>Daftar Harga BBM</caption>
 		<thead>
 			<tr>
 				<th scope="col">Liter</th>
-				<th scope="col">Bensin</th>
-				<th scope="col">Solar</th>
-				<th scope="col">Pertamax</th>
+<?php
+	if (isset($_POST['bensinChecked'])) {
+		echo '
+				<th scope="col">Bensin</th>';
+	}
+	if (isset($_POST['solarChecked'])) {
+		echo '
+				<th scope="col">Solar</th>';
+	}
+	if (isset($_POST['pertamaxChecked'])) {
+		echo '
+				<th scope="col">Pertamax</th>';
+	}
+?>
+				
 			</tr>
 		</thead>
 		<tbody>
@@ -85,10 +112,20 @@
 		for ($i=$literAwal;$i<=$literAkhir;$i++) {
 			echo '
 			<tr>
-				<td>' . $i . '</td>
-				<td>Rp. ' . $bensinAwal . '</td>
-				<td>Rp. ' . $solarAwal . '</td>
-				<td>Rp. ' . $pertaAwal . '</td>
+				<td>' . $i . '</td>';
+			if (isset($_POST['bensinChecked'])) {
+				echo '
+				<td align="right"> Rp. ' . number_format($bensinAwal,0,",",".") . '</td>';
+			}
+			if (isset($_POST['solarChecked'])) {
+				echo '
+				<td align="right"> Rp. ' . number_format($solarAwal,0,",",".") . '</td>';
+			}
+			if (isset($_POST['pertamaxChecked'])) {
+				echo '
+				<td align="right"> Rp. ' . number_format($pertaAwal,0,",",".") . '</td>';
+			}
+			echo '
 			</tr>';
 
 			$bensinAwal += $bensin;
