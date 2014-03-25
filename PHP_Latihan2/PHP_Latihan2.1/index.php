@@ -11,13 +11,33 @@
 			<tr>
 				<th scope="row">Liter Awal</th>
 				<td>
-					<input type="text" size="15" name="literAwal" />
+					<select name="literAwal">
+<?php
+	for ($i=1;$i<=100;$i++) {
+		if (isset($_POST['klikTombol']) && $literAwal != $i) {
+			echo '		<option value="' . $i . '">' . $i . '</option>';
+		} else {
+			echo '		<option value="' . $i . '" selected="selected">' . $i . '</option>';
+		}
+	}
+?>
+					</select>
 				</td>
 			</tr>
 			<tr>
 				<th scope="row">Liter Akhir</th>
 				<td>
-					<input type="text" size="15" name="literAkhir" />
+					<select name="literAkhir">
+<?php
+	for ($i=1;$i<=100;$i++) {
+		if (isset($_POST['klikTombol']) && $_POST['literAkhir'] == $i) {
+			echo '		<option value="' . $i . '" selected="selected">' . $i . '</option>';
+		} else {
+			echo '		<option value="' . $i . '">' . $i . '</option>';
+		}
+	}
+?>
+					</select>
 				</td>
 			</tr>
 			<tr>
