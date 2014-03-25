@@ -52,6 +52,12 @@
 		$literAwal = $_POST['literAwal'];
 		$literAkhir = $_POST['literAkhir'];
 
+		if ($literAwal > $literAkhir) {
+			$temp = $literAwal;
+			$literAwal = $literAkhir;
+			$literAkhir = $temp;
+		}
+
 		$bensinAwal = $bensin * $literAwal;
 		$solarAwal = $solar * $literAwal;
 		$pertaAwal = $pertamax * $literAwal;
