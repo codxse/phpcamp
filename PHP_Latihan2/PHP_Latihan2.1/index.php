@@ -49,7 +49,7 @@
 					<input type="checkbox" name="solarChecked"
 						<?php if (isset($_POST[klikTombol]) && isset($_POST['solarChecked']))
 							echo ' checked="checked"'; ?>/>Solar<br />
-					<input type="checkbox" name="solarChecked"
+					<input type="checkbox" name="pertamaxChecked"
 						<?php if (isset($_POST[klikTombol]) && isset($_POST['pertamaxChecked']))
 							echo ' checked="checked"'; ?>/>Pertamax
 				</td>
