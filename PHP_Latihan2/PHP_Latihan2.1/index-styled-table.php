@@ -39,29 +39,42 @@
 		$bensinAwal = $bensin * $literAwal;
 		$solarAwal = $solar * $literAwal;
 		$pertaAwal = $pertamax * $literAwal;
+		$temp = $literAwal;
 
 		for ($i=$literAwal;$i<=$literAkhir;$i++) {
-			echo '
+			if ((!isset($_POST['bensinChecked'])) &&
+				(!isset($_POST['solarChecked'])) &&
+				(!isset($_POST['pertamaxChecked']))
+			   ) {
+
+				if ($i==$temp) 
+					echo '<h4 style="color:#FF0000;">Belum memilih jenis BBM!</h4>';
+
+			} else {
+
+				echo '
 		<tr>
 			<td>' . $i . '</td>';
-			if (isset($_POST['bensinChecked'])) {
-				echo '
+				if (isset($_POST['bensinChecked'])) {
+					echo '
 			<td align="right"> Rp. ' . number_format($bensinAwal,0,",",".") . '</td>';
 			}
-			if (isset($_POST['solarChecked'])) {
-				echo '
+				if (isset($_POST['solarChecked'])) {
+					echo '
 			<td align="right"> Rp. ' . number_format($solarAwal,0,",",".") . '</td>';
 			}
-			if (isset($_POST['pertamaxChecked'])) {
-				echo '
+				if (isset($_POST['pertamaxChecked'])) {
+					echo '
 			<td align="right"> Rp. ' . number_format($pertaAwal,0,",",".") . '</td>';
 			}
-			echo '
+				echo '
 		</tr>';
 
-			$bensinAwal += $bensin;
-			$solarAwal += $solar;
-			$pertaAwal += $pertamax;
+				$bensinAwal += $bensin;
+				$solarAwal += $solar;
+				$pertaAwal += $pertamax;
+				
+			}
 		}
 	
 ?>
