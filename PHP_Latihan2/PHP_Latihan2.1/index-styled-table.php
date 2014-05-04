@@ -30,6 +30,7 @@
 		$literAwal = $_POST['literAwal'];
 		$literAkhir = $_POST['literAkhir'];
 
+		// jika liter awal > liter akhir, tukar liter awal dengan liter akhir
 		if ($literAwal > $literAkhir) {
 			$temp = $literAwal;
 			$literAwal = $literAkhir;
