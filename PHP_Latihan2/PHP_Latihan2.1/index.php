@@ -44,13 +44,13 @@
 				<th scope="row">Jenis BBM</th>
 				<td>
 					<input type="checkbox" name="bensinChecked" 
-						<?php if (isset($_POST[klikTombol]) && isset($_POST['bensinChecked']))
+						<?php if (isset($_POST['klikTombol']) && isset($_POST['bensinChecked']))
 							echo ' checked="checked"'; ?>/>Bensin<br />
 					<input type="checkbox" name="solarChecked"
-						<?php if (isset($_POST[klikTombol]) && isset($_POST['solarChecked']))
+						<?php if (isset($_POST['klikTombol']) && isset($_POST['solarChecked']))
 							echo ' checked="checked"'; ?>/>Solar<br />
 					<input type="checkbox" name="pertamaxChecked"
-						<?php if (isset($_POST[klikTombol]) && isset($_POST['pertamaxChecked']))
+						<?php if (isset($_POST['klikTombol']) && isset($_POST['pertamaxChecked']))
 							echo ' checked="checked"'; ?>/>Pertamax
 				</td>
 			</tr>

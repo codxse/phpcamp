@@ -4,17 +4,17 @@
 		<div class="controls">
 			<label class="checkbox inline" for="Bensin">
 				<input type="checkbox" id="Bensin" name="bensinChecked" 
-					<?php if (isset($_POST[klikTombol]) && isset($_POST['bensinChecked']))
+					<?php if (isset($_POST['klikTombol']) && isset($_POST['bensinChecked']))
 						echo ' checked="checked" value="Bensin"';?>/> Bensin
 			</label>
 			<label class="checkbox inline" for="Solar">
 				<input type="checkbox" id="Solar" name="solarChecked"
-					<?php if (isset($_POST[klikTombol]) && isset($_POST['solarChecked']))
+					<?php if (isset($_POST['klikTombol']) && isset($_POST['solarChecked']))
 						echo ' checked="checked" value="Solar"'; ?>/> Solar
 			</label>
 			<label class="checkbox inline" for="Pertamax">
 				<input type="checkbox" id="Pertamax" name="pertamaxChecked"
-					<?php if (isset($_POST[klikTombol]) && isset($_POST['pertamaxChecked']))
+					<?php if (isset($_POST['klikTombol']) && isset($_POST['pertamaxChecked']))
 						echo ' checked="checked" value="Pertamax"'; ?>/> Pertamax
 			</label>
 		</div>
