@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  app:
+    platform: linux/x86_64
+    image: id.zenness/php-2022:latest
+    tty: true
+    volumes:
+      - ./src:/var/www/html/
+    env_file:
+      - environment.env
+    ports:
+      - "8080:8080"
